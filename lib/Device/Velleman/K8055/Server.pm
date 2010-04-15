@@ -4,7 +4,7 @@ use strict;
 BEGIN {
     use Exporter ();
     use vars qw($VERSION @ISA @EXPORT @EXPORT_OK %EXPORT_TAGS %share %server $maxclientnum $clientnum $ipc);
-    $VERSION     = '0.02';
+    $VERSION     = '0.03';
     @ISA         = qw(Exporter);
     #Give a hoot don't pollute, do not export more than needed by default
     @EXPORT      = qw();
@@ -21,20 +21,6 @@ use Tie::ShareLite qw( :lock );
 use Time::HiRes qw(usleep);
 use Data::Dumper;
 use Device::Velleman::K8055::libk8055;
-
-
-#################### subroutine header begin ####################
-
-=head2 new
-
- Usage     : new()
- Purpose   : invokes the server
- Returns   : object reference
- Comment   : creates the server object including shared memory creation.
-           
-=cut
-
-#################### subroutine header end ####################
 
 
 sub new
